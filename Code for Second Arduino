@@ -1,0 +1,27 @@
+// C++ code
+//
+
+ int IncomSig;// Incoming Signal from Arduino 1
+void setup()
+{
+
+  pinMode(13, OUTPUT);
+  Serial.begin(9600); // Starts the serial communication
+ 
+}
+
+void loop()
+{
+        
+	 IncomSig = Serial.read(); //Read the signal
+  if ( IncomSig == 1) // Check the signal
+  	  {
+      digitalWrite(13, HIGH); //Piezo ON
+      delay(1000);
+  	  }
+  else{
+      digitalWrite(13, LOW);  //Piezo OFF
+      delay(15);
+  }
+
+}
